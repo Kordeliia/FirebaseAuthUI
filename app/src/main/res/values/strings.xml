@@ -8,4 +8,17 @@
     <string name="mssg_error_no_network">Error de conexión</string>
     <string name="mssg_error_codigo_error">Código de error: ${it.errorCode}</string>
     <string name="tv_cargando">Cargando</string>
+        <string name="efab_text_create">CREAR</string>
+    <string name="mssg_error_consultar_datos">Fallo al consultar los datos</string>
+    <string name="hint_name_product">Nombre del producto</string>
+    <string name="hint_description_product">Descripción del producto</string>
+    <string name="hint_precio">Precio</string>
+    <string name="hint_quantity">Cantidad</string>
+    <string name="mssg_producto_insertado">Producto añadido con éxito</string>
+    <string name="mssg_producto_no_insertado">El producto no ha podido ser añadido</string>
+    <string name="mssg_producto_eliminado">El producto ha sido eliminado</string>
+    <string name="mssg_producto_eliminado_error">Fallo al eliminar un producto.</string>
+    <string name="mssg_producto_actualizado">Producto actualizado correctamente</string>
+    <string name="mssg_producto_no_actualizado">Error al actualizar</string>
+    <string name="mssg_imagen_no_insertada">La imagen no ha podido ser registrada. Edite su producto.</string>
 </resources>

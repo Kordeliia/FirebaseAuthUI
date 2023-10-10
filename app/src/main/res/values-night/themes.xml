@@ -2,6 +2,13 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FirebaseAUthUI" parent="Theme.Material3.DayNight">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorSecondary">@color/pink_dark</item>
+        <item name="colorSecondaryVariant">@color/pink_less_light</item>
+        <item name="colorPrimary">@color/blue_dark</item>
+        <item name="colorPrimaryVariant">@color/blue_less_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="android:colorBackground">@color/blue_dark</item>
     </style>
 </resources>

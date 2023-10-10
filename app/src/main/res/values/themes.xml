@@ -2,7 +2,15 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FirebaseAUthUI" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blue_light</item>
+        <item name="colorPrimaryVariant">@color/blue_normal_light</item>
+        <item name="colorSecondary">@color/pink_light</item>
+        <item name="colorSecondaryVariant">@color/pink_normal_light</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="android:colorBackground">@color/blue_light</item>
+
     </style>
 
     <style name="Theme.FirebaseAUthUI" parent="Base.Theme.FirebaseAUthUI" />

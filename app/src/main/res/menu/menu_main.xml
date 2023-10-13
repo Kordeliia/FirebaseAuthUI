@@ -6,4 +6,9 @@
     android:title="@string/menu_title_sign_out"
     app:showAsAction="never"
     />
+    <item
+        android:id="@+id/action_order_history"
+        android:title=""
+        android:icon="@drawable/ic_orders"
+        app:showAsAction="ifRoom"/>
 </menu>

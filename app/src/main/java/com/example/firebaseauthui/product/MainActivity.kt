@@ -1,5 +1,6 @@
-package com.example.firebaseauthui
+package com.example.firebaseauthui.product
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -8,7 +9,12 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.firebaseauthui.add.AddDialogFragment
+import com.example.firebaseauthui.Constants
+import com.example.firebaseauthui.entities.Product
+import com.example.firebaseauthui.R
 import com.example.firebaseauthui.databinding.ActivityMainBinding
+import com.example.firebaseauthui.order.OrderActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
@@ -143,6 +149,7 @@ class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
                 binding.efab.show()
             } else{
                 val providers = arrayListOf(
+                    AuthUI.IdpConfig.EmailBuilder().build(),
                     AuthUI.IdpConfig.GoogleBuilder().build())
                 resultLauncher.launch(AuthUI
                     .getInstance()
@@ -192,6 +199,7 @@ class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
                         }
                     }
             }
+            R.id.action_order_history -> startActivity(Intent(this, OrderActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }

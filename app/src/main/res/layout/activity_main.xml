@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".product.MainActivity">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsvProducts"
@@ -51,6 +51,6 @@
     android:visibility="gone"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
-    android:layout_marginEnd="@dimen/common_padding_normal"
-    android:layout_marginBottom="@dimen/common_padding_normal"/>
+    android:layout_marginEnd="@dimen/common_padding_default"
+    android:layout_marginBottom="@dimen/common_padding_default"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

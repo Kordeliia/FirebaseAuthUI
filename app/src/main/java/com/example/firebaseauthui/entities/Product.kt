@@ -1,4 +1,4 @@
-package com.example.firebaseauthui
+package com.example.firebaseauthui.entities
 
 import com.google.firebase.firestore.Exclude
 

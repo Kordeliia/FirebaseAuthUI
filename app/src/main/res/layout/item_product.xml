@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="@dimen/common_padding_min">
+    android:layout_margin="@dimen/common_padding_min"
+    app:strokeColor="@color/blue_dark"
+    app:strokeWidth="@dimen/stroke_car_dim">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -24,6 +26,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/common_padding_min"
             tools:text="x10"
+            android:textColor="@color/blue_light"
             app:layout_constraintEnd_toEndOf="@id/imgProduct"
             app:layout_constraintBottom_toBottomOf="@id/imgProduct"
             />
@@ -33,6 +36,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/common_padding_min"
             tools:text="Nombre producto"
+            android:textColor="@color/blue_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgProduct"
@@ -42,6 +46,7 @@
             android:layout_width="@dimen/padding_none"
             android:layout_height="wrap_content"
             android:padding="@dimen/common_padding_min"
+            android:textColor="@color/blue_light"
             tools:text="15€"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

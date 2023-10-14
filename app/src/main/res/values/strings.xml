@@ -51,4 +51,9 @@
     <string name="track_title">Localización pedido</string>
     <string name="toast_status_changed">Estado cambiado correctamente</string>
     <string name="toast_status_error">Error al cambiar estado del pedido</string>
+    <string name="text_input_layout_chat">Escribe tu mensaje</string>
+    <string name="snackbar_error_chat">Fallo al cargar el chat</string>
+    <string name="snackbar_error_borrar">El mensaje NO ha podido ser borrado</string>
+    <string name="snackbar_mensaje_borrado">Mensaje borrado correctamente</string>
+    <string name="chat_title">Soporte pedidos</string>
 </resources>

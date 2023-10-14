@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.firebaseauthui.Constants
 import com.example.firebaseauthui.R
+import com.example.firebaseauthui.chat.ChatFragment
 import com.example.firebaseauthui.databinding.ActivityOrderBinding
 import com.example.firebaseauthui.entities.Order
 import com.google.firebase.firestore.FirebaseFirestore
@@ -38,6 +39,13 @@ class OrderActivity : AppCompatActivity(), OnOrderListener, OrderAux {
     }
 
     override fun onStartChat(order: Order) {
+        orderSelected = order
+        val fragment = ChatFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.containerMain, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun getOrderSelected(): Order = orderSelected

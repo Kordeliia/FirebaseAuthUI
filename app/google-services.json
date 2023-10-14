@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "931924165854",
+    "firebase_url": "https://twocatsamigurumipartner-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "twocatsamigurumipartner",
     "storage_bucket": "twocatsamigurumipartner.appspot.com"
   },
@@ -13,6 +14,51 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "931924165854-8u4teermreelogkme2ksupj7uu6iejjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebaseauthui",
+            "certificate_hash": "6cf9d677368ea916821bff286f14d06735a06e75"
+          }
+        },
+        {
+          "client_id": "931924165854-2p8kt1shi9ejq5j9hbkhck1tn6tn6c6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwsMva0WgGy2mlwOazaz8PH8o_4tjEoMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931924165854-2p8kt1shi9ejq5j9hbkhck1tn6tn6c6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931924165854:android:c5bfaa0db2a21fa9956e4f",
+        "android_client_info": {
+          "package_name": "com.example.twocatsamigurumi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931924165854-aqpk54jfnbah229d7bq2hghv4mnd9ms1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.twocatsamigurumi",
+            "certificate_hash": "6cf9d677368ea916821bff286f14d06735a06e75"
+          }
+        },
         {
           "client_id": "931924165854-2p8kt1shi9ejq5j9hbkhck1tn6tn6c6i.apps.googleusercontent.com",
           "client_type": 3

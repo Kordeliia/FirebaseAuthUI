@@ -5,4 +5,5 @@ object Constants {
     const val COLL_PRODUCTS = "products"
     const val COLL_REQUESTS = "requests"
     const val PROP_STATUS = "status"
+    const val PATH_CHATS = "chats"
 }

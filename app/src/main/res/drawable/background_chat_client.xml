@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape
+        android:shape="rectangle">
+        <corners
+            android:topLeftRadius="@dimen/common_padding_default"
+            android:bottomLeftRadius="@dimen/common_padding_default"/>
+
+        <stroke
+            android:width="@dimen/stroke_chat"
+            android:color="?attr/colorPrimaryVariant"/>
+        <gradient
+            android:type="linear"
+            android:angle="180"
+            android:gradientRadius="50dp"
+            android:startColor="@color/pink_dark"
+            android:endColor="@color/pink_normal_light"/>
+    </shape>
+
+</item>
+</selector>

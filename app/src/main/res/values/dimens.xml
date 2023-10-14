@@ -8,4 +8,7 @@
     <dimen name="product_cart_img_size">48dp</dimen>
     <dimen name="stroke_car_dim">2dp</dimen>
     <dimen name="dimenssion_14dp">14dp</dimen>
+    <dimen name="chat_guideline_end">48dp</dimen>
+    <dimen name="stroke_chat">1dp</dimen>
+    <dimen name="chat_margin_horizontal">64dp</dimen>
 </resources>

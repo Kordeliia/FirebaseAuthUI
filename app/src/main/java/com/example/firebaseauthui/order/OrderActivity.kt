@@ -11,6 +11,7 @@ import com.example.firebaseauthui.databinding.ActivityOrderBinding
 import com.example.firebaseauthui.entities.Order
 import com.example.firebaseauthui.fcm.NotificationRS
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 class OrderActivity : AppCompatActivity(), OnOrderListener, OrderAux {
     private lateinit var binding : ActivityOrderBinding
@@ -94,6 +95,7 @@ class OrderActivity : AppCompatActivity(), OnOrderListener, OrderAux {
     private fun setupFirestore(){
         val db = FirebaseFirestore.getInstance()
         db.collection(Constants.COLL_REQUESTS)
+            .orderBy(Constants.PROP_DATE, Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener {
                 for(document in it){

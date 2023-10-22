@@ -60,4 +60,7 @@ dependencies {
 
     //volley
     implementation("com.android.volley:volley:1.2.1")
+
+    //analytics
+    implementation("com.google.firebase:firebase-analytics-ktx")
 }

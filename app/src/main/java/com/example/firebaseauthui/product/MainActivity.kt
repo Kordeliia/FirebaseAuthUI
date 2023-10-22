@@ -18,10 +18,14 @@ import com.example.firebaseauthui.order.OrderActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
@@ -31,6 +35,7 @@ class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
     private lateinit var adapter : ProductAdapter
     private lateinit var firestoreListener : ListenerRegistration
     private var productSelected : Product? = null
+    private lateinit var firebaseAnalytics : FirebaseAnalytics
     private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ it ->
         val response = IdpResponse.fromResultIntent(it.data)
         if(it.resultCode == RESULT_OK){
@@ -39,12 +44,20 @@ class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
                 Toast.makeText(this,
                     getString(R.string.mssg_bienvenida),
                     Toast.LENGTH_SHORT).show()
+                firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN){
+                    param(FirebaseAnalytics.Param.SUCCESS, 100) // 100 = login success
+                    param(FirebaseAnalytics.Param.METHOD, "login")
+                }
             }
         } else {
             if(response == null){
                 Toast.makeText(this,
                     getString(R.string.mssg_despedida),
                     Toast.LENGTH_SHORT).show()
+                firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN){
+                    param(FirebaseAnalytics.Param.SUCCESS, 200) // 200 = cancel
+                    param(FirebaseAnalytics.Param.METHOD, "login")
+                }
                 finish()
             } else {
                 response.error?.let{
@@ -56,6 +69,10 @@ class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
                         Toast.makeText(this,
                             getString(R.string.mssg_error_codigo_error),
                             Toast.LENGTH_SHORT).show()
+                    }
+                    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN){
+                        param(FirebaseAnalytics.Param.SUCCESS, it.errorCode.toLong())
+                        param(FirebaseAnalytics.Param.METHOD, "login")
                     }
                 }
             }
@@ -69,13 +86,17 @@ class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
         configRecyclerView()
         //configFirestore()
         //configFirestoreRealtime()
-        cofigButtons()
+        configButtons()
+        configAnalytics()
     }
-    private fun cofigButtons() {
+    private fun configButtons() {
         binding.efab.setOnClickListener {
             productSelected = null
             AddDialogFragment().show(supportFragmentManager, AddDialogFragment::class.java.simpleName)
         }
+    }
+    private fun configAnalytics(){
+        firebaseAnalytics = Firebase.analytics
     }
     private fun configFirestoreRealtime() {
         val db = FirebaseFirestore.getInstance()
@@ -186,6 +207,10 @@ class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
                         Toast.makeText(this,
                             getString(R.string.mssg_sign_out_success),
                             Toast.LENGTH_SHORT).show()
+                        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN){
+                            param(FirebaseAnalytics.Param.SUCCESS, 100) // 100 = sign out success
+                            param(FirebaseAnalytics.Param.METHOD, "sign_out")
+                        }
                     }
                     .addOnCompleteListener {
                         if(it.isSuccessful){
@@ -196,6 +221,10 @@ class MainActivity : AppCompatActivity(), OnProductListener, MainAux {
                             Toast.makeText(this,
                                 getString(R.string.mssg_sign_out_failure),
                                 Toast.LENGTH_SHORT).show()
+                            firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN){
+                                param(FirebaseAnalytics.Param.SUCCESS, 201) // 201 = sign out error
+                                param(FirebaseAnalytics.Param.METHOD, "sign_out")
+                            }
                         }
                     }
             }
